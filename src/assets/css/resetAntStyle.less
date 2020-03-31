@@ -1,0 +1,112 @@
+// 表格
+.reset-table {
+    // table {
+    //     table-layout: fixed;
+
+    //     td.truncated {
+    //         white-space: nowrap;
+    //         overflow: hidden;
+    //         text-overflow: ellipsis;
+    //     }
+    // }
+    .ant-table-header {
+        // background: #fafafc;
+    }
+    .ant-table-fixed-header .ant-table-scroll .ant-table-header {
+        overflow-y: hidden !important;
+    }
+    .ant-table-thead > tr > th {
+        padding: 0 0.2rem;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        color: #333;
+        outline: none;
+        background-color: #e5ebfb;
+        border-bottom: 0;
+
+        &:first-of-type {
+            padding: 0 0.2rem 0 0.4rem;
+        }
+        .ant-table-column-title {
+            font-size: 0.16rem;
+            font-weight: 600;
+        }
+    }
+    .ant-table-thead > tr:first-child > th:first-child,
+    .ant-table-thead > tr:first-child > th:last-child {
+        border-radius: 0;
+    }
+    .ant-table-tbody > tr {
+        &:nth-of-type(2n) {
+            background-color: #f0f4fd;
+        }
+        &:nth-of-type(2n + 1) {
+            background-color: #fff;
+        }
+    }
+    .ant-table-tbody > tr > td {
+        padding: 0 0.2rem;
+        line-height: 0.5rem;
+        height: 0.5rem;
+        font-size: 0.16rem;
+        color: #333;
+        background: transparent;
+        border-radius: 0;
+
+        &:first-of-type {
+            padding: 0 0.2rem 0 0.4rem;
+        }
+    }
+    .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+    .ant-table-thead > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+    .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+    .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+        background-color: #ebf0ff;
+    }
+}
+.auto-scroll-y(@flex: 0rem) {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - @flex);
+
+    .ant-spin-nested-loading,
+    .ant-spin-container,
+    .ant-table,
+    .ant-table-scroll,
+    .ant-table-body-inner,
+    .ant-table-fixed-left,
+    .ant-table-fixed-right,
+    .ant-table-content {
+        height: 100%;
+    }
+    .ant-table-content {
+        position: relative;
+    }
+    .ant-table-body,
+    .ant-table-body-inner {
+        overflow-y: anto !important;
+    }
+    .ant-table-body {
+        height: calc(100% -0.5rem);
+    }
+    .ant-table-body-outer {
+        height: calc(100% -0.5rem);
+    }
+    .ant-table-body-innder {
+        overflow-x: hidden;
+    }
+    .ant-table-placeholder {
+        position: absolute;
+        top: 0.5rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.auto-scroll-y {
+    .auto-scroll-y();
+}
